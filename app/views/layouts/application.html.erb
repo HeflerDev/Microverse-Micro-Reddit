@@ -12,11 +12,11 @@
 </head>
 
 <body>
- <nav class='col'>
+ <nav class='col border-bottom border-dark'>
   <div class='col container row d-flex justify-content-between'>
-    <p><%= link_to 'Home Page', controller: 'posts' %></p>
-    <p>About Me</p>
-    <p><%= link_to 'New Post', new_post_path %></p>
+    <p><%= link_to 'Home Page', controller: 'posts',class: 'btn btn-light'%></p>
+    <p class='btn btn-light'>About Me</p>
+    <p><%= link_to 'New Post', new_post_path, class: 'btn btn-light' %></p>
   </div>
   
  </nav>
