@@ -1,13 +1,14 @@
 <%= form_with scope: :posts, url: posts_path, local: true, class: 'form-group col-8' do |form| %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title%>
+  <p class='container'>
+    <strong><%= form.label :title %></strong><br>
+    <%= form.text_field :title, {:class => 'form-control col-12 col-md-4'}%>
   </p>
-  <p>
-    <%= form.label :content %> <br>
+  <p class='container'>
+    <strong><%= form.label :content %></strong> <br>
     <%= form.text_area :content, class: 'form-control' %>
   </p>
+  <hr>
   <p>
-    <%= form.submit %>
+    <%= form.submit class:'btn btn-warning' %>
   </p>
 <% end %>
