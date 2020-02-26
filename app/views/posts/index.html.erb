@@ -1,0 +1,20 @@
+<h1 class='container text-center'> Index </h1>
+
+<% @posts.each do |post| %>
+<div class='container'>
+  <div class='row'>
+    <div class='container col-2'>
+    <%#This will display the user %>
+    </div>
+    <div class='container col-8 m-auto'>
+      <h3><%= link_to post.title, post_path(post) %></h3>
+      <p class='border rounded'><%= post.content %></p>
+    </div>
+    <div class='col-lg-2 col-md-12 col-sm-4  row m-auto'>
+      <%= link_to 'Edit', edit_post_path(post), {:class => 'col-lg-8 col-md-2 m-auto btn btn-secondary'} %>
+      <%= link_to 'Destroy', post_path(post),class: 'col-lg-8 col-md-2 m-auto btn btn-danger', method: :delete, data: { confirm: 'Are you sure?'} %>
+    </div>
+  </div>
+  <hr>
+</div>
+<% end %>

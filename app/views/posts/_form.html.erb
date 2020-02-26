@@ -1,0 +1,13 @@
+<%= form_with scope: :posts, url: posts_path, local: true, class: 'form-group col-8' do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title%>
+  </p>
+  <p>
+    <%= form.label :content %> <br>
+    <%= form.text_area :content, class: 'form-control' %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
