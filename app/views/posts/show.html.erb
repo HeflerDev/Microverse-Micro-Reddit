@@ -1,64 +1,17 @@
-<h2 class='container'>Post </h2>
+<h1>Posts#show</h1>
 
 <div class='container'>
   <div class='row'>
+    <div class='container col-2'>
+    <%#This will display the user %>
+    </div>
     <div class='container col-8'>
-      <h3><strong>
-      <p class='border-bottom'>
-        <%= @post.title %>
-      </p>
-      </strong></h3>
-      <p class='container border rounded'>
-        <%= @post.content%>
-      </p>
+      <p>Title: <%= @post.title %></p>
+      <p>Text: <%= @post.content %></p>
     </div>
     <div class='container col-2 row'>
-      <%= link_to 'Edit', edit_post_path(@post), { :class => 'btn btn-secondary m-auto' } %>
-      <%= link_to 'Destroy', post_path(@post),class:'btn btn-danger m-auto', method: :delete, data: { confirm: 'Are you sure?' } %>
+      <button class='col-6'><%= link_to 'Edit', edit_post_path(@post) %></button>
+      <button class='col-6'><%= link_to 'Destroy', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %></button>
     </div>
-  </div>
-</div>
-
-<h2 class='container'>Comments</h2>
-<hr>
-<% @post.comments.each do |comment| %>
-<div class='container'>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
- 
-  <p>
-    <strong>Comment:</strong><br>
-    <p class='border container'>
-      <%= comment.body %>
-    </p>
-  </p>
-  <p>
-  <%= link_to 'Destroy Comment', [comment.post, comment],
-               method: :delete,
-               class:'btn btn-danger',
-               data: { confirm: 'Are you sure?' } %>
-</p>
-</div>
-<hr>
-<% end %>
-
-<div class='container'>
-  <div class=''>
-    <h3> Add a Comment:<h3><br>
-    <%= form_with(model: [@post,@post.comments.build ], local: true) do |form|%>
-      <p>
-        <%= form.label :commenter %> <br>
-        <%= form.text_field :commenter, { :class => 'form-control col-12 col-md-4' } %>
-      </p>
-      <p>
-        <%= form.label :body %> <br>
-        <%= form.text_area :body, { :class => 'form-control' }%>
-      </p>
-      <p>
-      <%= form.submit %>
-      </p>
-    <% end %>
   </div>
 </div>
