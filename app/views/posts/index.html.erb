@@ -1,2 +1,20 @@
 <h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+
+<% @posts.each do |post| %>
+<div class='container'>
+  <div class='row'>
+    <div class='container col-2'>
+    <%#This will display the user %>
+    </div>
+    <div class='container col-10'>
+      <p>Title: <%= post.title %></p>
+      <p>Text: <%= post.content %></p>
+    </div>
+    <div class='col-md-12 row m-auto'>
+      <%= link_to 'Show', post_path(post), {:class => 'col-4 m-auto btn btn-primary'} %>
+      <%= link_to 'Edit', edit_post_path(post), {:class => 'col-4 m-auto btn btn-secondary'} %>
+      <%= link_to 'Destroy', post_path(post),class: 'col-4 m-auto btn btn-danger', method: :delete, data: { confirm: 'Are you sure?'} %>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @post = Post.new
+    @posts = Post.all
   end
 
   def show
@@ -39,11 +39,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to @post
+    redirect_to posts_path
   end
-  
+
   private
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:posts).permit(:title, :content)
   end
 end

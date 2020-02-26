@@ -12,7 +12,14 @@
 </head>
 
 <body>
-
+ <nav class='col'>
+  <div class='col container row d-flex justify-content-between'>
+    <p><%= link_to 'Home Page', controller: 'posts' %></p>
+    <p>About Me</p>
+    <p><%= link_to 'New Post', new_post_path %></p>
+  </div>
+  
+ </nav>
 
   <%= yield %>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
