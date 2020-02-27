@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_175345) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.text "password"
